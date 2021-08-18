@@ -1,0 +1,61 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org" xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+    <head>
+        <title>Spring Security SAML2</title>
+        <script src='js/helper.js'></script>
+        <script type="text/javascript" th:src="@{/js/helper.js}"></script>
+        <link rel="stylesheet" th:href="@{/css/styles.css}"/>
+        <style>
+            h1 {text-align: center;}
+        </style>
+    </head>
+    <body style="">
+        <h1>SAML2 Login Example with Spring Security 5.2</h1>
+        <div>You are logged in as <span sec:authentication="name"></span></div>
+        <div>
+            <form th:action="@{/logout}" method="post">
+                <input type="submit" value="Logout" />
+            </form>
+        </div>
+        <h1 class="title">EMR Simulator</h1>
+
+        <div class="container">
+            <br>
+            <span class="subtitle">Select a Patient:</span>
+            </br>
+            <br>
+            <table id="patients" class='table table-bordered table-condensed table-striped table-hover'>
+                <tr><th>Name</th><th>Email</th></tr>
+                <tr class="table-row" onclick="john()" data-href="http://tutorialsplane.com"><td>John</td><td>johnny@gmail.com</td></tr>
+                <tr class="table-row" onclick="kelly()" data-href="http://tutorialsplane.com"><td>Kelly</td><td>kelly@gmail.com</td></tr>
+                <tr class="table-row" onclick="david()" data-href="http://tutorialsplane.com"><td>David</td><td>david1@gmail.com</td></tr>
+                <tr class="table-row" onclick="ana()" data-href="http://tutorialsplane.com"><td>Ana</td><td>ana@gmail.com</td></tr>
+            </table>
+            </br>
+        </div>
+
+        <div class="container">
+            <br>
+            <span class="subtitle">Patient Details:</span>
+            <br/>
+            <br>
+            <div class="container">
+                <p>
+                    <span>MRN:</span>
+                    <span id="pMRN"></span>
+                </p>
+                <p>
+                    <span>Name:</span>
+                    <span id="pName"></span>
+                </p>
+                <p>
+                    <span>Gender:</span>
+                    <span id="pGender"></span>
+                </p>
+                <a id="uapp" href="https://google.com" target="_blank"></a>
+            </div>
+            <br/>
+        </div>
+
+    </body>
+</html>
